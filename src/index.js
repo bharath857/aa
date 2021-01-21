@@ -7,7 +7,10 @@ import * as Keycloak from 'keycloak-js'
 
 //keycloak init options
 let initOptions = {
-    url: 'http://localhost:8080/auth', realm: 'RedIQ', clientId: 'client1', onLoad: 'login-required'
+    url: 'http://localhost:8080/auth', 
+    realm: 'RedIQ', 
+    clientId: 'client1', 
+    onLoad: 'login-required'
 }
 
 
@@ -19,6 +22,8 @@ keycloak.init({ onLoad: initOptions.onLoad }).success((auth) => {
         window.location.reload();
     } else {
         console.info("Authenticated");
+        console.log("----------------------")
+        console.log(keycloak)
     }
 
     //React Render
@@ -26,7 +31,7 @@ keycloak.init({ onLoad: initOptions.onLoad }).success((auth) => {
 
     localStorage.setItem("react-token", keycloak.token);
     localStorage.setItem("react-refresh-token", keycloak.refreshToken);
-    console.log(keycloak)
+
     setTimeout(() => {
         keycloak.updateToken(70).success((refreshed) => {
             if (refreshed) {
