@@ -11,9 +11,7 @@ function App() {
       <header className="App-header">
       <h1>Welcome to your Secure React App with Keycloak</h1>
       <div>
-        <img src={logo} className="App-logo" alt="logo" />
-        <img src={love} className="Love-logo" alt="heart" />
-        <img src={keycloaklogo} className="Keycloak-logo" alt="keycloaklogo" />
+        <h1> Welcome to React app</h1>
         </div>
        
         <a
